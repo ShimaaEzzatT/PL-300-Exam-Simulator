@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#07386B">
+    <meta name="description" content="Practice your Power BI skills with the PL-300 Exam Simulator.">
+    <title>PL-300 Exam Simulator | Power BI Practice</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="header-label">
+                <span class="status-dot" aria-hidden="true"></span>
+                <span>Practice Environment</span>
+            </div>
+
+            <a class="brand" href="#home" aria-label="PL-300 Exam Simulator home">
+                <img src="./logo.png" alt="PL-300 Exam Simulator logo" class="brand-logo">
+            </a>
+        </div>
+    </header>
+
+<!-- Access Code Modal -->
+<div
+    id="access-code-modal"
+    class="access-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="access-modal-title"
+    hidden
+>
+    <div class="access-modal-dialog">
+
+        <button
+            type="button"
+            id="access-modal-close"
+            class="access-modal-close"
+            aria-label="Close access code window"
+        >
+            &times;
+        </button>
+
+        <div class="access-modal-icon" aria-hidden="true">
+            <i class="fas fa-lock"></i>
+        </div>
+
+        <span class="access-modal-eyebrow">
+            PL-300 EXAM SIMULATOR
+        </span>
+
+        <h2 id="access-modal-title">Enter Access Code</h2>
+
+        <p class="access-modal-description">
+            Enter your access code to continue to the exam preparation page.
+        </p>
+
+        <form id="access-code-form">
+
+            <label for="exam-access-code">
+                Access Code
+            </label>
+
+            <div class="access-code-input-wrapper">
+                <input
+                    type="password"
+                    id="exam-access-code"
+                    name="accessCode"
+                    placeholder="Enter your access code"
+                    autocomplete="off"
+                    required
+                >
+
+                <button
+                    type="button"
+                    id="toggle-access-code"
+                    aria-label="Show access code"
+                    aria-pressed="false"
+                >
+                    <i class="fas fa-eye" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <p
+                id="access-code-error"
+                class="access-code-error"
+                role="alert"
+                hidden
+            ></p>
+
+            <button
+                type="submit"
+                id="verify-access-code"
+                class="access-code-submit"
+            >
+                Verify &amp; Continue
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </button>
+
+            <button
+                type="button"
+                id="cancel-access-code"
+                class="access-code-cancel"
+            >
+                Cancel
+            </button>
+
+        </form>
+    </div>
+</div>
+
+    <main id="main-content">
+        <div id="introduction-view">
+            <section class="hero section-shell" id="home">
+                <div class="hero-copy">
+                    <div class="eyebrow">
+                        <span class="eyebrow-icon" aria-hidden="true">✦</span>
+                        CERTIFICATION PRACTICE
+                    </div>
+
+                    <h1>PL-300 Exam <span>Simulator</span></h1>
+                    <h2>Test Your Power BI Skills</h2>
+
+                    <p class="hero-description">
+                        Prepare for the Microsoft Power BI Data Analyst Associate
+                        certification by testing your knowledge, evaluating your
+                        skills, and identifying areas for improvement.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="#start-simulation">
+                            Explore the Exam
+                            <span aria-hidden="true">→</span>
+                        </a>
+                        <a class="button button-secondary" href="#skills">
+                            Explore Skills
+                        </a>
+                    </div>
+
+                    <div class="hero-trust">
+                        <span class="trust-icon" aria-hidden="true">✓</span>
+                        Independent practice environment
+                    </div>
+                </div>
+
+                <div class="hero-visual" aria-label="Illustration representing data analysis">
+                    <div class="visual-orbit orbit-one"></div>
+                    <div class="visual-orbit orbit-two"></div>
+
+                    <div class="visual-card">
+                        <div class="visual-card-header">
+                            <div>
+                                <span class="visual-kicker">ANALYTICS OVERVIEW</span>
+                                <h3>Power BI Skills</h3>
+                            </div>
+                            <span class="visual-menu" aria-hidden="true">•••</span>
+                        </div>
+
+                        <div class="visual-chart">
+                            <div class="chart-y-labels" aria-hidden="true">
+                                <span>100</span>
+                                <span>75</span>
+                                <span>50</span>
+                                <span>25</span>
+                            </div>
+
+                            <div class="chart-area">
+                                <div class="chart-grid-line"></div>
+                                <div class="chart-grid-line"></div>
+                                <div class="chart-grid-line"></div>
+                                <div class="chart-grid-line"></div>
+
+                                <svg class="chart-svg" viewBox="0 0 320 150"
+                                     role="img" aria-label="Decorative rising data trend">
+                                    <defs>
+                                        <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="#249DA0" stop-opacity=".24"/>
+                                            <stop offset="100%" stop-color="#249DA0" stop-opacity="0"/>
+                                        </linearGradient>
+                                    </defs>
+
+                                    <path
+                                        d="M0 125 C30 115, 36 92, 68 101 S108 80, 135 87 S176 43, 205 61 S253 22, 320 15 L320 150 L0 150 Z"
+                                        fill="url(#chartFill)"/>
+
+                                    <path
+                                        d="M0 125 C30 115, 36 92, 68 101 S108 80, 135 87 S176 43, 205 61 S253 22, 320 15"
+                                        fill="none"
+                                        stroke="#249DA0"
+                                        stroke-width="3.5"
+                                        stroke-linecap="round"/>
+
+                                    <circle cx="205" cy="61" r="5" fill="#FFFFFF" stroke="#249DA0" stroke-width="3"/>
+                                    <circle cx="320" cy="15" r="5" fill="#FF6B5F"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="chart-months" aria-hidden="true">
+                            <span>Prepare</span>
+                            <span>Model</span>
+                            <span>Analyze</span>
+                            <span>Manage</span>
+                        </div>
+
+                        <div class="visual-footer">
+                            <span class="footer-mark"></span>
+                            <span>Knowledge. Practice. Progress.</span>
+                        </div>
+                    </div>
+
+                    <div class="floating-chip chip-top">
+                        <span class="chip-icon teal-icon" aria-hidden="true">▥</span>
+                        <span>
+                            <strong>Data Modeling</strong>
+                            <small>Build reliable models</small>
+                        </span>
+                    </div>
+
+                    <div class="floating-chip chip-bottom">
+                        <span class="chip-icon coral-icon" aria-hidden="true">↗</span>
+                        <span>
+                            <strong>Data Analysis</strong>
+                            <small>Turn data into insights</small>
+                        </span>
+                    </div>
+
+                    <div class="hero-decoration decoration-one"></div>
+                    <div class="hero-decoration decoration-two"></div>
+                </div>
+            </section>
+
+            <section class="section-shell exam-overview" aria-labelledby="overview-title">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-kicker">YOUR PRACTICE AT A GLANCE</span>
+                        <h2 id="overview-title">Exam Overview</h2>
+                    </div>
+                    <p>Understand the practice configuration before you begin.</p>
+                </div>
+
+                <div class="overview-grid">
+                    <article class="overview-card certification-card">
+                        <div class="overview-icon navy-icon" aria-hidden="true">✧</div>
+                        <div class="overview-content">
+                            <span class="card-label">CERTIFICATION</span>
+                            <h3>Microsoft Certified: Power BI Data Analyst Associate</h3>
+                        </div>
+                    </article>
+
+                    <article class="overview-card">
+                        <div class="overview-icon teal-icon" aria-hidden="true">⌘</div>
+                        <div class="overview-content">
+                            <span class="card-label">EXAM CODE</span>
+                            <h3>PL-300</h3>
+                            <p>Power BI Data Analyst</p>
+                        </div>
+                    </article>
+
+                    <article class="overview-card">
+                        <div class="overview-icon coral-icon" aria-hidden="true">☷</div>
+                        <div class="overview-content">
+                            <span class="card-label">PRACTICE QUESTIONS</span>
+                            <h3>60 Questions</h3>
+                            <p>Proposed practice configuration</p>
+                        </div>
+                    </article>
+
+                    <article class="overview-card">
+                        <div class="overview-icon navy-icon" aria-hidden="true">◷</div>
+                        <div class="overview-content">
+                            <span class="card-label">PRACTICE DURATION</span>
+                            <h3>100 Minutes</h3>
+                            <p>Proposed practice configuration</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="configuration-note">
+                    <span class="note-icon" aria-hidden="true">i</span>
+                    <p>
+                        <strong>Practice settings:</strong> The question count and duration
+                        shown here are proposed settings for this simulator. They should
+                        not be interpreted as a statement of the official Microsoft exam format.
+                    </p>
+                </div>
+            </section>
+
+            <section class="skills-section" id="skills" aria-labelledby="skills-title">
+                <div class="section-shell">
+                    <div class="section-heading">
+                        <div>
+                            <span class="section-kicker">KNOW WHAT TO FOCUS ON</span>
+                            <h2 id="skills-title">Skills Measured</h2>
+                        </div>
+                        <p>Explore the four official skill domains and their published weight ranges.</p>
+                    </div>
+
+                    <div class="skills-grid">
+                        <article class="skill-card">
+                            <div class="skill-top">
+                                <span class="skill-icon navy-icon" aria-hidden="true">⇣</span>
+                                <span class="skill-number">01</span>
+                            </div>
+                            <h3>Prepare the Data</h3>
+                            <p>Connect to data sources, transform data, and prepare datasets for analysis.</p>
+                            <div class="skill-range">
+                                <span>Official weight range</span>
+                                <strong>25–30%</strong>
+                            </div>
+                            <div class="range-track" aria-label="Official weight range: 25 to 30 percent">
+                                <span class="range-fill range-navy"></span>
+                            </div>
+                        </article>
+
+                        <article class="skill-card">
+                            <div class="skill-top">
+                                <span class="skill-icon teal-icon" aria-hidden="true">◇</span>
+                                <span class="skill-number">02</span>
+                            </div>
+                            <h3>Model the Data</h3>
+                            <p>Design data models, define relationships, and develop calculations.</p>
+                            <div class="skill-range">
+                                <span>Official weight range</span>
+                                <strong>25–30%</strong>
+                            </div>
+                            <div class="range-track" aria-label="Official weight range: 25 to 30 percent">
+                                <span class="range-fill range-teal"></span>
+                            </div>
+                        </article>
+
+                        <article class="skill-card">
+                            <div class="skill-top">
+                                <span class="skill-icon coral-icon" aria-hidden="true">▥</span>
+                                <span class="skill-number">03</span>
+                            </div>
+                            <h3>Visualize and Analyze the Data</h3>
+                            <p>Create reports, configure visualizations, and identify meaningful insights.</p>
+                            <div class="skill-range">
+                                <span>Official weight range</span>
+                                <strong>25–30%</strong>
+                            </div>
+                            <div class="range-track" aria-label="Official weight range: 25 to 30 percent">
+                                <span class="range-fill range-coral"></span>
+                            </div>
+                        </article>
+
+                        <article class="skill-card">
+                            <div class="skill-top">
+                                <span class="skill-icon navy-icon" aria-hidden="true">♙</span>
+                                <span class="skill-number">04</span>
+                            </div>
+                            <h3>Manage and Secure Power BI</h3>
+                            <p>Manage workspaces, secure data access, and support content distribution.</p>
+                            <div class="skill-range">
+                                <span>Official weight range</span>
+                                <strong>15–20%</strong>
+                            </div>
+                            <div class="range-track" aria-label="Official weight range: 15 to 20 percent">
+                                <span class="range-fill range-short"></span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <p class="section-footnote">
+                        These are official skill-area weight ranges, not exact percentages
+                        of questions in this practice simulation. DAX is covered within the
+                        relevant skill domain and is not shown as a separate official domain.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section-shell instructions-section" aria-labelledby="instructions-title">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-kicker">READ BEFORE STARTING</span>
+                        <h2 id="instructions-title">Before You Begin</h2>
+                    </div>
+                    <p>A few simple guidelines can help you get more value from your practice.</p>
+                </div>
+
+                <div class="instructions-layout">
+                    <div class="instruction-list">
+                        <article class="instruction-item">
+                            <span class="instruction-number">01</span>
+                            <p>You will have <strong>100 minutes</strong> to complete the 60-question practice simulation.</p>
+                        </article>
+                        <article class="instruction-item">
+                            <span class="instruction-number">02</span>
+                            <p>Read each question carefully and identify the exact requirement.</p>
+                        </article>
+                        <article class="instruction-item">
+                            <span class="instruction-number">03</span>
+                            <p>Pay attention to keywords such as <strong>BEST</strong>, <strong>MOST EFFICIENT</strong>, and <strong>MINIMUM EFFORT</strong>.</p>
+                        </article>
+                        <article class="instruction-item">
+                            <span class="instruction-number">04</span>
+                            <p>Follow the instructions provided for each question, including questions that require multiple selections.</p>
+                        </article>
+                        <article class="instruction-item">
+                            <span class="instruction-number">05</span>
+                            <p>Manage your time and avoid spending too long on a single question.</p>
+                        </article>
+                        <article class="instruction-item">
+                            <span class="instruction-number">06</span>
+                            <p>Use the review functionality to revisit flagged questions before submission.</p>
+                        </article>
+                        <article class="instruction-item">
+                            <span class="instruction-number">07</span>
+                            <p>After submission, review your score and performance across the four skill domains.</p>
+                        </article>
+                    </div>
+
+                    <aside class="notice-card">
+                        <div class="notice-icon" aria-hidden="true">!</div>
+                        <span class="section-kicker">PLEASE NOTE</span>
+                        <h3>Important Notice</h3>
+                        <p>
+                            This is an independent practice simulation, not an official
+                            Microsoft examination. Your results are intended to help you
+                            assess your readiness and identify areas for improvement.
+                        </p>
+                        <div class="notice-divider"></div>
+                        <div class="notice-detail">
+                            <span aria-hidden="true">✓</span>
+                            <p>Use your results as a guide for further study and practice.</p>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            <section class="tips-section" aria-labelledby="tips-title">
+                <div class="section-shell">
+                    <div class="section-heading">
+                        <div>
+                            <span class="section-kicker">MAKE EVERY QUESTION COUNT</span>
+                            <h2 id="tips-title">Tips for Success</h2>
+                        </div>
+                        <p>Keep these practical strategies in mind throughout your preparation.</p>
+                    </div>
+
+                    <div class="tips-grid">
+                        <article class="tip-card">
+                            <span class="tip-icon navy-icon" aria-hidden="true">◎</span>
+                            <h3>Understand the Requirement</h3>
+                            <p>Choose the answer that best satisfies the scenario, not simply an answer that is technically possible.</p>
+                        </article>
+                        <article class="tip-card">
+                            <span class="tip-icon teal-icon" aria-hidden="true">⇄</span>
+                            <h3>Focus on Key Differences</h3>
+                            <p>Review Import versus DirectQuery, measures versus calculated columns, Merge versus Append, and common data-model relationship concepts.</p>
+                        </article>
+                        <article class="tip-card">
+                            <span class="tip-icon coral-icon" aria-hidden="true">ƒx</span>
+                            <h3>Practice DAX in Context</h3>
+                            <p>Understand filter context, row context, CALCULATE, FILTER, and time intelligence rather than relying only on memorization.</p>
+                        </article>
+                        <article class="tip-card">
+                            <span class="tip-icon navy-icon" aria-hidden="true">◷</span>
+                            <h3>Manage Your Time</h3>
+                            <p>Eliminate unsuitable options, keep moving, and revisit difficult questions when necessary.</p>
+                        </article>
+                        <article class="tip-card">
+                            <span class="tip-icon teal-icon" aria-hidden="true">⌑</span>
+                            <h3>Review Security and Deployment</h3>
+                            <p>Understand row-level security, workspace permissions, report sharing, refresh configuration, and deployment concepts.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-shell start-section" id="start-simulation" aria-labelledby="start-title">
+                <div class="start-panel">
+                    <div class="start-decoration" aria-hidden="true"></div>
+                    <div class="start-content">
+                        <span class="start-eyebrow">YOUR NEXT STEP STARTS HERE</span>
+                        <h2 id="start-title">Are You Ready?</h2>
+                        <p>
+                            Test your knowledge, discover your strengths, and identify the
+                            areas you need to improve before taking the PL-300 certification exam.
+                        </p>
+
+                        <div class="start-stats">
+                            <div class="start-stat">
+                                <strong>60</strong>
+                                <span>Practice Questions</span>
+                            </div>
+                            <div class="stat-divider"></div>
+                            <div class="start-stat">
+                                <strong>100</strong>
+                                <span>Minutes</span>
+                            </div>
+                            <div class="stat-divider"></div>
+                            <div class="start-stat">
+                                <strong>4</strong>
+                                <span>Skill Domains</span>
+                            </div>
+                        </div>
+
+                        <button class="button button-primary start-button" id="start-button" type="button">
+                            Start Simulation
+                            <span aria-hidden="true">→</span>
+                        </button>
+                        <p class="start-caption">Take a breath, focus on the requirement, and do your best.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        
+<section id="entry-view" class="entry-view" hidden>
+    <div class="readiness-container">
+
+        <div class="readiness-icon">
+            <i class="fas fa-clipboard-check"></i>
+        </div>
+
+        <span class="readiness-eyebrow">PL-300 EXAM SIMULATOR</span>
+
+        <h1>Are You Ready?</h1>
+
+        <p class="readiness-description">
+            You're about to begin your PL-300 practice simulation.
+            Take a moment to prepare yourself before entering the exam.
+        </p>
+
+        <div class="readiness-summary">
+
+            <div class="readiness-item">
+                <div class="readiness-item-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+
+                <div class="readiness-item-content">
+                    <h3>Stay Focused</h3>
+                    <p>Read each question carefully before selecting your answer.</p>
+                </div>
+            </div>
+
+            <div class="readiness-item">
+                <div class="readiness-item-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+
+                <div class="readiness-item-content">
+                    <h3>Think Before You Answer</h3>
+                    <p>Use your Power BI knowledge to evaluate every option.</p>
+                </div>
+            </div>
+
+            <div class="readiness-item">
+                <div class="readiness-item-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+
+                <div class="readiness-item-content">
+                    <h3>Test Your Skills</h3>
+                    <p>Challenge your understanding of the PL-300 exam objectives.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="readiness-confirmation">
+            <i class="fas fa-info-circle"></i>
+            <p>
+                Make sure you're ready to focus before starting your simulation.
+            </p>
+        </div>
+
+        <div class="readiness-actions">
+            <button
+                type="button"
+                id="back-to-introduction"
+                class="readiness-back-button"
+            >
+                <i class="fas fa-arrow-left"></i>
+                Back
+            </button>
+
+            <button
+                type="button"
+                id="confirm-readiness"
+                class="readiness-start-button"
+            >
+                I'm Ready — Start Exam
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+
+    </div>
+</section>
+
+
+
+<section id="contoso-case-study" class="case-study-view" aria-label="Contoso case study" hidden>
+    <div class="case-study-shell">
+        <div class="case-study-heading">
+            <div><span class="case-study-kicker">PL-300 PRACTICE CASE STUDY</span><h1>Contoso Financial Reporting</h1><p>Review the exhibits, then answer Question 01.</p></div>
+            <div class="case-timer" id="case-timer" role="timer" aria-live="off" aria-label="20 minutes remaining">
+                <span class="case-timer-label"><span class="case-timer-dot" aria-hidden="true"></span> TIME REMAINING</span>
+                <strong id="case-timer-display">20:00</strong>
+                <div class="case-timer-track" aria-hidden="true"><span id="case-timer-progress"></span></div>
+            </div>
+            <button type="button" class="button button-secondary case-study-exit" id="case-study-exit">Exit Case Study</button>
+        </div>
+        <div class="case-study-layout">
+            <aside class="case-study-sidebar" aria-label="Case study navigation">
+                <button type="button" class="case-study-menu-toggle" id="case-study-menu-toggle" aria-expanded="false" aria-controls="case-study-navigation">☰ Browse Case Study</button>
+                <nav id="case-study-navigation" class="case-study-navigation" aria-label="Case study sections">
+                    <button type="button" data-case-section="overview" class="case-nav-item is-active">Case Study Overview</button>
+                    <button type="button" data-case-section="environment" class="case-nav-item">Existing Environment</button>
+                    <button type="button" data-case-section="sources" class="case-nav-item">Data and Sources</button>
+                    <button type="button" data-case-section="balance" class="case-nav-item">Balance Sheet Data</button>
+                    <button type="button" data-case-section="products" class="case-nav-item">Product Catalog Data</button>
+                    <button type="button" data-case-section="issues" class="case-nav-item">Business Issues</button>
+                    <button type="button" data-case-section="requirements" class="case-nav-item">Requirements</button>
+                    <button type="button" data-case-section="technical" class="case-nav-item">Technical Requirements</button>
+                    <button type="button" data-case-section="security" class="case-nav-item">Security Requirements</button>
+                    <button type="button" data-case-section="reports" class="case-nav-item">Report Requirements</button>
+                    <button type="button" data-case-section="date-table" class="case-nav-item">Date Table</button>
+                    <button type="button" data-case-section="question" class="case-nav-item case-nav-question">Question 01</button>
+
+<button type="button" data-case-section="question-2" class="case-nav-item case-nav-question">
+    Question 02
+</button>
+
+<button type="button" data-case-section="question-3" class="case-nav-item case-nav-question">
+    Question 03
+</button>
+
+
+<button type="button" data-case-section="question-4" class="case-nav-item case-nav-question">
+    Question 04
+</button>
+
+<button type="button" data-case-section="question-5" class="case-nav-item case-nav-question">
+    Question 05
+</button>
+
+<button type="button" data-case-section="question-6" class="case-nav-item case-nav-question">
+    Question 06
+</button>
+
+<button type="button" data-case-section="review" class="case-nav-item">
+    Review Status
+</button>
+
+
+                </nav>
+                <div class="case-review-mini" id="case-review-mini"><strong>Final Score</strong><span id="case-review-status">Not answered</span><span id="case-review-score">Score: — / 2</span></div>
+            </aside>
+            <div class="case-study-main">
+                <div id="case-study-content" class="case-study-content" tabindex="-1" aria-live="polite"></div>
+                <div class="case-study-pager"><button type="button" class="button button-secondary" id="case-previous">Previous</button><span id="case-page-indicator">Case Study Overview</span><button type="button" class="button button-primary" id="case-next">Next</button></div>
+            </div>
+        </div>
+        <p class="case-study-footnote">Practice simulator note: answers are evaluated in the browser. A determined user can inspect client-side JavaScript to discover the answer key.</p>
+    </div>
+
+    <div class="case-timeout-overlay" id="case-timeout-overlay" role="dialog" aria-modal="true" aria-labelledby="case-timeout-title" hidden>
+        <div class="case-timeout-card">
+            <div class="case-timeout-illustration" aria-hidden="true">
+                <svg viewBox="0 0 120 100">
+                    <circle cx="60" cy="47" r="36" fill="#FFF0EE"/>
+                    <path d="M35 40 Q43 32 51 40 M69 40 Q77 32 85 40" fill="none" stroke="#07386B" stroke-width="4" stroke-linecap="round"/>
+                    <circle cx="44" cy="49" r="3.5" fill="#07386B"/><circle cx="76" cy="49" r="3.5" fill="#07386B"/>
+                    <path d="M46 69 Q60 54 74 69" fill="none" stroke="#FF6B5F" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M24 17 L19 10 M96 17 L101 10" stroke="#FF6B5F" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <span class="case-timeout-kicker">PRACTICE MAKES PROGRESS</span>
+            <h2 id="case-timeout-title">Time Out!</h2>
+            <p class="case-timeout-lead">Your 20 minutes are up.</p>
+            <p>Don't be discouraged! Managing time is an important part of the PL-300 exam, and this simulation is here to help you practise.</p>
+            <p class="case-timeout-encouragement"><strong>Take a breath, review your answers, and learn from this attempt. You'll come back faster and stronger!</strong></p>
+            <button type="button" class="button button-primary" id="case-timeout-continue">Continue Reviewing</button>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>PL-300 Exam Simulator</p>
+            <p>Independent practice for Power BI learners</p>
+            <span class="footer-copyright">Practice with purpose.</span>
+        </div>
+    </footer>
+</body>
+</html>
